@@ -44,8 +44,8 @@ public class UserService {
                 .username(request.getUsername())
                 .userId(request.getUserId())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .authLevel(AuthLevel.USER)
-//                .authLevel(request.getAuthLevel())
+//                .authLevel(AuthLevel.USER)
+                .authLevel(request.getAuthLevel())
                 .build();
 
         User saved = userRepository.save(user);

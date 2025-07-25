@@ -1,14 +1,15 @@
 package nahye.demo.controller;
 
 import lombok.RequiredArgsConstructor;
-import nahye.demo.dto.room.RoomResponse;
+import nahye.demo.dto.room.RoomGetResponse;
+
 import nahye.demo.service.RoomService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,7 @@ public class RoomController {
     @GetMapping
     public ResponseEntity<?> getAllRooms(){
         try{
-            List<RoomResponse> response = roomService.getAllRooms();
+            List<RoomGetResponse> response = roomService.getAllRooms();
             return ResponseEntity.ok(response);
         } catch (Exception e){
             logger.error("오류 : ",e);

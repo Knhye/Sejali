@@ -44,6 +44,7 @@ public class User {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "rooms")
+    @Builder.Default
+    @OneToMany(mappedBy = "user")
     private List<Reservation> reservations = new ArrayList<>();
 }

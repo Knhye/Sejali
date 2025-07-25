@@ -30,6 +30,7 @@ public class Room {
     @Column(nullable = false, name = "room_img")
     private String roomImg;
 
-    @OneToMany(mappedBy = "rooms")
+    @Builder.Default
+    @OneToMany(mappedBy = "room")
     private List<Reservation> reservations = new ArrayList<>();
 }
